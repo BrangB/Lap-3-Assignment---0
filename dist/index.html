@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="mainContainer w-screen h-screen flex items-center justify-center bg-waikawa-gray-50">
-        <div class="qTitle flex gap-8 text-xl">
+        <div class="qTitle duration-300 flex gap-8 text-xl absolute">
             <h1 class="bg-waikawa-gray-700 game hover:bg-waikawa-gray-600 hover:scale-125 hover:rotate-6 duration-150 p-4 px-6 text-white uppercase font-semibold rounded-md cursor-pointer">Game</h1>
             <h1 class="bg-waikawa-gray-700 city hover:bg-waikawa-gray-600 hover:scale-125 hover:rotate-6 duration-150 p-4 px-6 text-white uppercase font-semibold rounded-md cursor-pointer">City</h1>
+        </div>
+        <div class="quizCard rotateCard flex flex-col items-center justify-center gap-8 scale-0 duration-500 w-[600px] h-[400px] bg-waikawa-gray-500 text-white p-6">
+            <div class="question font-semibold text-lg"></div>
+            <div class="quizOption flex gap-4"></div>
             <button class="next">Next</button>
             <button class="prev">Prev</button>
         </div>

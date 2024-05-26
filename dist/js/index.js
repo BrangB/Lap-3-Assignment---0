@@ -1,8 +1,12 @@
 const mainContainer = document.querySelector(".mainContainer");
+const qTitle = document.querySelector(".qTitle");
 const gameButton = document.querySelector(".game");
 const cityButton = document.querySelector(".city");
 const nextButton = document.querySelector(".next");
 const prevButton = document.querySelector(".prev");
+const quizCard = document.querySelector(".quizCard");
+const question = document.querySelector(".question");
+const quizOption = document.querySelector(".quizOption");
 
 const cities = [
   {
@@ -128,32 +132,34 @@ class Quiz {
   constructor(quizTitle, currentQuiz) {
     this.quizTitle = quizTitle;
     this.currentQuiz = currentQuiz;
-    this.renderQuiz();
+    this.showQuiz();
   }
 
-  renderQuiz() {
-    const quizData =
-      this.quizTitle === "games"
-        ? games[this.currentQuiz]
-        : cities[this.currentQuiz];
-    console.log(quizData.question);
-    // You can add more logic here to display the quiz question and options in the DOM
+  showQuiz() {
+    const quizData = this.quizTitle === "games" ? games[this.currentQuiz] : cities[this.currentQuiz]
+    question.textContent = quizData.question
+    quizOption.innerHTML = `
+        ${
+            quizData.options.map(option => {
+                return `<button class="quiz-option bg-waikawa-gray-300 p-3">${option}</button>`
+            }).join("")
+        }
+    `
   }
 
   next() {
-    if (
-      this.currentQuiz <
-      (this.quizTitle === "games" ? games.length : cities.length) - 1
-    ) {
-      this.currentQuiz += 1;
-      this.renderQuiz();
+    if(this.currentQuiz < (this.quizTitle === "games" ? games.length : cities.length) - 1){
+        this.currentQuiz += 1;
+        this.showQuiz();
+        quizCard.classList.toggle("rotateCard")
+        quizCard.classList.toggle("shakeCard")
     }
   }
 
   prev() {
     if (this.currentQuiz > 0) {
       this.currentQuiz -= 1;
-      this.renderQuiz();
+      this.showQuiz();
     }
   }
 }
@@ -181,6 +187,9 @@ gameButton.addEventListener("click", () => {
   quizTitle = "games";
   currentQuiz = 0;
   generateNewQuiz(quizTitle);
+  qTitle.style.transform = "scale(0)"
+  quizCard.classList.toggle('scale-0')
+  quizCard.classList.toggle('scale-100')
 });
 
 cityButton.addEventListener("click", () => {

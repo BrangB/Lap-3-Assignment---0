@@ -1,0 +1,25 @@
+
+.shakeCard {
+    animation: shake 0.5s ease-in-out;
+}
+.rotateCard {
+    animation: shake2 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-20px); }
+    40% { transform: translateX(20px); }
+    60% { transform: translateX(-20px); }
+    80% { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+  }
+  
+@keyframes shake2 {
+    0% { transform: translateY(0); }
+    20% { transform: translateY(-20px); }
+    40% { transform: translateY(20px); }
+    60% { transform: translateY(-20px); }
+    80% { transform: translateY(20px); }
+    100% { transform: translateY(0); }
+  }
