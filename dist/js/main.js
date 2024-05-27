@@ -1,3 +1,4 @@
+
 const mainContainer = document.querySelector(".mainContainer");
 const qTitle = document.querySelector(".qTitle");
 const gameButton = document.querySelector(".game");
@@ -15,6 +16,11 @@ const quizNumber = document.querySelector('.quizNumber');
 const doneImage = document.querySelector(".doneImage");
 const submitButton = document.querySelector(".submit");
 const backToHome = document.querySelector(".backToHome");
+const scoreCard = document.querySelector(".score");
+const Qamount = document.querySelector(".amount");
+const correctQ = document.querySelector(".correctQ");
+const incorrectQ = document.querySelector(".incorrectQ");
+const percentage = document.querySelector(".percentage");
 
 const foods = [
   {
@@ -167,6 +173,8 @@ const games = [
   },
 ];
 
+
+
 const showAlert = (alertType) => {
   if(alertType == "correct"){
     correctAlert.style.top = "10px"
@@ -194,68 +202,62 @@ const showAlert = (alertType) => {
 
 
 let currentQuiz = 0;
+let totalScore = 0;
 let quizTitle = "games";
 
 class Quiz {
   constructor(quizTitle, currentQuiz) {
     this.quizTitle = quizTitle;
     this.currentQuiz = currentQuiz;
+    this.totalScore = totalScore;
+    this.quizArray = quizTitle === "games" ? games : foods
     this.showQuiz();
   }
 
   checkAnswer(selectedOption) {
     console.log(`Option selected: ${selectedOption}`);
-    if(quizTitle === "games"){
-      if(selectedOption == games[this.currentQuiz].answer){
-        showAlert("correct")
-      }else{
-        showAlert("incorrect")
-      }
-      games[this.currentQuiz].done = true;
+    if(selectedOption == this.quizArray[this.currentQuiz].answer){
+      showAlert("correct")
+      this.totalScore += 1;
     }else{
-      if(selectedOption == foods[this.currentQuiz].answer){
-        showAlert("correct")
-      }else{
-        showAlert("incorrect")
-      }
-      foods[this.currentQuiz].done = true;
+      showAlert("incorrect")
     }
+    this.quizArray[this.currentQuiz].done = true;
     this.showQuiz()
   }
 
   submit(){
     let unFinishedQ;
-    if(quizTitle === "games"){
-      unFinishedQ = games.filter(question => {
-        return question.done != true;
-      })
-
-    }else{
-      unFinishedQ = foods.filter(question => {
-        return question.done != true;
-      })
-    }
+    unFinishedQ = this.quizArray.filter(question => {
+      return question.done != true;
+    })
 
     if(unFinishedQ.length > 0){
       let message = unFinishedQ.map(item => item.id).join(", ");
       warningMessage.textContent = `You haven't answered question no. ${message} !!`
       showAlert("warning")
+    }else{
+      console.log(this.totalScore)
+      Qamount.textContent = this.quizArray.length
+      correctQ.textContent = this.totalScore
+      incorrectQ.textContent = this.quizArray.length - this.totalScore
+      const percentageScore = (this.totalScore / this.quizArray.length) * 100;
+      percentage.textContent = `${percentageScore.toFixed(1)}%`;
+      console.log(percentageScore)
+      scoreCard.style.display = "flex"
+      quizCard.style.display = "none"
     }
   }
 
   showQuiz() {
-    const quizData = this.quizTitle === "games" ? games[this.currentQuiz] : foods[this.currentQuiz]
+    const quizData = this.quizArray[this.currentQuiz]
     question.textContent = quizData.question
     this.currentQuiz == 0 ? prevButton.classList.add("cursor-not-allowed") : prevButton.classList.remove("cursor-not-allowed")
 
-    this.quizTitle === "games" ? quizNumber.textContent = `${this.currentQuiz + 1}/${games.length}` : quizNumber.textContent = `${this.currentQuiz + 1}/${foods.length}`
+    quizNumber.textContent = `${this.currentQuiz + 1}/${this.quizArray.length}`
 
     //disabled button
-    if(this.quizTitle === "games"){
-      this.currentQuiz == games.length - 1 ? nextButton.classList.add("cursor-not-allowed") : nextButton.classList.remove("cursor-not-allowed")
-    }else{
-      this.currentQuiz == foods.length - 1 ? nextButton.classList.add("cursor-not-allowed") : nextButton.classList.remove("cursor-not-allowed")
-    }
+    this.currentQuiz == this.quizArray.length - 1 ? nextButton.classList.add("cursor-not-allowed") : nextButton.classList.remove("cursor-not-allowed")
 
     quizOption.innerHTML = `
         ${
@@ -282,7 +284,7 @@ class Quiz {
 
 
   next() {
-    if(this.currentQuiz < (this.quizTitle === "games" ? games.length : foods.length) - 1){
+    if(this.currentQuiz < this.quizArray.length - 1){
         this.currentQuiz += 1;
         this.showQuiz();
         quizCard.classList.toggle("rotateCard")
@@ -321,6 +323,7 @@ prevButton.addEventListener("click", () => {
 gameButton.addEventListener("click", () => {
   quizTitle = "games";
   currentQuiz = 0;
+  totalScore = 0;
   generateNewQuiz(quizTitle);
   quizCard.style.display = "flex"
   quizCard.classList.toggle('scale-0')
@@ -330,6 +333,7 @@ gameButton.addEventListener("click", () => {
 foodButton.addEventListener("click", () => {
   quizTitle = "foods";
   currentQuiz = 0;
+  totalScore = 0;
   generateNewQuiz(quizTitle);
   quizCard.style.display = "flex"
   quizCard.classList.toggle('scale-0')

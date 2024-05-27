@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Quiz | Assignment - 0</title>
     <link rel="stylesheet" href="css/output.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script
@@ -43,6 +43,26 @@
             <img src="./images/done logo.png" class="w-full h-full" alt="done logo">
         </div>
       </div>
+      <div class="score hidden duration-200 relative w-[350px] h-[400px] bg-white shadow-lg rounded-lg flex-col p-4 gap-6 items-center justify-evenly">
+        <h1 class="font-semibold text-xl uppercase">Score</h1>
+        <div class="desc w-full flex flex-col gap-6 p-6">
+            <div class="flex items-center justify-between">
+                <p>Number of questions</p>
+                <span class="amount">10</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <p class="flex items-center justify-center">Correct Quantity<i class="fa-solid fa-circle-check text-green-500 text-lg ms-3"></i></p>
+                <span class="correctQ">10</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <p class="flex items-center justify-center">Wrong Quantity<i class="fa-solid fa-circle-xmark text-red-500 text-lg ms-3"></i></p>
+                <span class="incorrectQ">10</span>
+            </div>
+        </div>
+        <div class="w-full text-center"><span class="percentage text-green-500 font-medium text-xl">0%</span> Success</div>
+        <button class="p-2 px-5 rounded-sm bg-waikawa-gray-700 text-white cursor-pointer hover:bg-waikawa-gray-600 duration-200">Back</button>
+        <img src="./images/result.png" class="w-[160px] absolute -bottom-16 -left-20" alt="">
+      </div>
         <div class="correct p-4 px-6 bg-[#ffffff] shadow-lg rounded-lg flex items-center justify-center font-medium text-black gap-4 absolute -top-20 scale-50 duration-200">
           <i class="fa-solid fa-circle-check text-green-500 text-lg"></i>
           Correct !
@@ -54,9 +74,8 @@
         <div class="warning p-4 px-6 bg-[#ffffff] shadow-lg rounded-lg flex items-center justify-center font-medium text-[#4e4e4e] gap-4 absolute -top-20 scale-50 duration-200">
             <i class="fa-solid fa-triangle-exclamation text-lg text-yellow-500"></i>
             <p class="warningMessage"></p>
-          </div>
+        </div>
     </div>
-
-    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
