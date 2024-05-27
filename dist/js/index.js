@@ -1,7 +1,7 @@
 const mainContainer = document.querySelector(".mainContainer");
 const qTitle = document.querySelector(".qTitle");
 const gameButton = document.querySelector(".game");
-const cityButton = document.querySelector(".city");
+const foodButton = document.querySelector(".food");
 const nextButton = document.querySelector(".next");
 const prevButton = document.querySelector(".prev");
 const quizCard = document.querySelector(".quizCard");
@@ -9,72 +9,85 @@ const question = document.querySelector(".question");
 const quizOption = document.querySelector(".quizOption");
 const correctAlert = document.querySelector(".correct");
 const incorrectAlert = document.querySelector(".incorrect");
+const warningAlert = document.querySelector(".warning");
+const warningMessage = document.querySelector(".warningMessage");
 const quizNumber = document.querySelector('.quizNumber');
+const doneImage = document.querySelector(".doneImage");
+const submitButton = document.querySelector(".submit");
+const backToHome = document.querySelector(".backToHome");
 
-const cities = [
+const foods = [
   {
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Berlin", "Rome"],
-    answer: "Paris",
-    done: false,
+      id: 1,
+      question: "What vegetable do rabbits love to eat?",
+      options: ["Carrot", "Tomato", "Potato", "Broccoli"],
+      answer: "Carrot",
+      done: false
   },
   {
-    question: "What is the capital of Italy?",
-    options: ["Paris", "London", "Berlin", "Rome"],
-    answer: "Rome",
-    done: false,
+      id: 2,
+      question: "Which drink is known for helping kids grow strong bones?",
+      options: ["Coffee", "Soda", "Milk", "Lemonade"],
+      answer: "Milk",
+      done: false
   },
   {
-    question: "What is the capital of Germany?",
-    options: ["Paris", "London", "Berlin", "Rome"],
-    answer: "Berlin",
-    done: false,
+      id: 3,
+      question: "What type of food is a cucumber?",
+      options: ["Meat", "Fruit", "Vegetable", "Grain"],
+      answer: "Vegetable",
+      done: false
   },
   {
-    question: "What is the capital of Spain?",
-    options: ["Madrid", "Lisbon", "Paris", "Rome"],
-    answer: "Madrid",
-    done: false,
+      id: 4,
+      question: "Sushi is a cuisine that originated in which country?",
+      options: ["China", "Korea", "Thailand", "Japan"],
+      answer: "Japan",
+      done: false
   },
   {
-    question: "What is the capital of Portugal?",
-    options: ["Madrid", "Lisbon", "Paris", "Rome"],
-    answer: "Lisbon",
-    done: false,
+      id: 5,
+      question: "Which of these fruits is known for having its seeds on the outside?",
+      options: ["Raspberry", "Strawberry", "Blueberry", "Blackberry"],
+      answer: "Strawberry",
+      done: false
   },
   {
-    question: "What is the capital of Japan?",
-    options: ["Tokyo", "Beijing", "Seoul", "Bangkok"],
-    answer: "Tokyo",
-    done: false,
+      id: 6,
+      question: "What sweet treat is made from cocoa beans?",
+      options: ["Cheese", "Popcorn", "Chocolate", "Bread"],
+      answer: "Chocolate",
+      done: false
   },
   {
-    question: "What is the capital of Canada?",
-    options: ["Toronto", "Vancouver", "Ottawa", "Montreal"],
-    answer: "Ottawa",
-    done: false,
+      id: 7,
+      question: "Which of these is a dairy product?",
+      options: ["Apple", "Chicken", "Bread", "Cheese"],
+      answer: "Cheese",
+      done: false
   },
   {
-    question: "What is the capital of Australia?",
-    options: ["Sydney", "Melbourne", "Brisbane", "Canberra"],
-    answer: "Canberra",
-    done: false,
+      id: 8,
+      question: "What do bees make that is sweet and sticky?",
+      options: ["Butter", "Jam", "Honey", "Milk"],
+      answer: "Honey",
+      done: false
   },
   {
-    question: "What is the capital of Brazil?",
-    options: ["Rio de Janeiro", "São Paulo", "Brasília", "Salvador"],
-    answer: "Brasília",
-    done: false,
+      id: 9,
+      question: "Which food is often eaten at movie theaters?",
+      options: ["Popcorn", "Toast", "Rice", "Salad"],
+      answer: "Popcorn",
+      done: false
   },
   {
-    question: "What is the capital of India?",
-    options: ["Mumbai", "New Delhi", "Bangalore", "Chennai"],
-    answer: "New Delhi",
-    done: false,
+      id: 10,
+      question: "What fruit is known for being green on the outside and red on the inside with black seeds?",
+      options: ["Banana", "Orange", "Watermelon", "Apple"],
+      answer: "Watermelon",
+      done: false
   }
 ];
-
-
 
 const games = [
   {
@@ -162,12 +175,19 @@ const showAlert = (alertType) => {
       correctAlert.style.top = "-20px"
       correctAlert.style.transform = "scale(0)"
     }, 2000);
-  }else{
+  }else if(alertType == "incorrect"){
     incorrectAlert.style.top = "10px"
     incorrectAlert.style.transform = "scale(1)"
     setTimeout(() => {
       incorrectAlert.style.top = "-20px"
       incorrectAlert.style.transform = "scale(0)"
+    }, 2000);
+  }else{
+    warningAlert.style.top = "10px"
+    warningAlert.style.transform = "scale(1)"
+    setTimeout(() => {
+      warningAlert.style.top = "-20px"
+      warningAlert.style.transform = "scale(0)"
     }, 2000);
   }
 }
@@ -187,33 +207,54 @@ class Quiz {
     console.log(`Option selected: ${selectedOption}`);
     if(quizTitle === "games"){
       if(selectedOption == games[this.currentQuiz].answer){
-        console.log("Correct")
         showAlert("correct")
       }else{
-        console.log("Incorrect")
         showAlert("incorrect")
       }
       games[this.currentQuiz].done = true;
     }else{
-      selectedOption == cities[this.currentQuiz].answer ? console.log("right") : console.log("wrong")
+      if(selectedOption == foods[this.currentQuiz].answer){
+        showAlert("correct")
+      }else{
+        showAlert("incorrect")
+      }
+      foods[this.currentQuiz].done = true;
     }
-    cities[this.currentQuiz].done = true;
     this.showQuiz()
   }
 
+  submit(){
+    let unFinishedQ;
+    if(quizTitle === "games"){
+      unFinishedQ = games.filter(question => {
+        return question.done != true;
+      })
+
+    }else{
+      unFinishedQ = foods.filter(question => {
+        return question.done != true;
+      })
+    }
+
+    if(unFinishedQ.length > 0){
+      let message = unFinishedQ.map(item => item.id).join(", ");
+      warningMessage.textContent = `You haven't answered question no. ${message} !!`
+      showAlert("warning")
+    }
+  }
 
   showQuiz() {
-    const quizData = this.quizTitle === "games" ? games[this.currentQuiz] : cities[this.currentQuiz]
+    const quizData = this.quizTitle === "games" ? games[this.currentQuiz] : foods[this.currentQuiz]
     question.textContent = quizData.question
     this.currentQuiz == 0 ? prevButton.classList.add("cursor-not-allowed") : prevButton.classList.remove("cursor-not-allowed")
 
-    this.quizTitle === "games" ? quizNumber.textContent = `${this.currentQuiz + 1}/${games.length}` : quizNumber.textContent = `${this.currentQuiz + 1}/${cities.length}`
+    this.quizTitle === "games" ? quizNumber.textContent = `${this.currentQuiz + 1}/${games.length}` : quizNumber.textContent = `${this.currentQuiz + 1}/${foods.length}`
 
     //disabled button
     if(this.quizTitle === "games"){
       this.currentQuiz == games.length - 1 ? nextButton.classList.add("cursor-not-allowed") : nextButton.classList.remove("cursor-not-allowed")
     }else{
-      this.currentQuiz == cities.length - 1 ? nextButton.classList.add("cursor-not-allowed") : nextButton.classList.remove("cursor-not-allowed")
+      this.currentQuiz == foods.length - 1 ? nextButton.classList.add("cursor-not-allowed") : nextButton.classList.remove("cursor-not-allowed")
     }
 
     quizOption.innerHTML = `
@@ -232,13 +273,16 @@ class Quiz {
       if (quizData.done) {
         button.classList.add("cursor-not-allowed");
         button.disabled = true;
+        doneImage.style.display = "block"
+      }else{
+        doneImage.style.display = "none"
       }
     });
   }
 
 
   next() {
-    if(this.currentQuiz < (this.quizTitle === "games" ? games.length : cities.length) - 1){
+    if(this.currentQuiz < (this.quizTitle === "games" ? games.length : foods.length) - 1){
         this.currentQuiz += 1;
         this.showQuiz();
         quizCard.classList.toggle("rotateCard")
@@ -266,6 +310,10 @@ nextButton.addEventListener("click", () => {
   quiz.next()
 });
 
+submitButton.addEventListener("click", () => {
+  quiz.submit()
+})
+
 prevButton.addEventListener("click", () => {
   quiz.prev();
 });
@@ -274,15 +322,20 @@ gameButton.addEventListener("click", () => {
   quizTitle = "games";
   currentQuiz = 0;
   generateNewQuiz(quizTitle);
+  quizCard.style.display = "flex"
   quizCard.classList.toggle('scale-0')
   quizCard.classList.toggle('scale-100')
 });
 
-cityButton.addEventListener("click", () => {
-  quizTitle = "cities";
+foodButton.addEventListener("click", () => {
+  quizTitle = "foods";
   currentQuiz = 0;
   generateNewQuiz(quizTitle);
+  quizCard.style.display = "flex"
   quizCard.classList.toggle('scale-0')
   quizCard.classList.toggle('scale-100')
-  console.log("city");
 });
+
+backToHome.addEventListener("click", () => {
+  location.reload();
+})

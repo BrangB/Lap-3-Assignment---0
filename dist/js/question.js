@@ -1,55 +1,76 @@
 const foods = [
   {
+      id: 1,
       question: "What vegetable do rabbits love to eat?",
       options: ["Carrot", "Tomato", "Potato", "Broccoli"],
-      answer: "Carrot"
+      answer: "Carrot",
+      done: false
   },
   {
+      id: 2,
       question: "Which drink is known for helping kids grow strong bones?",
       options: ["Coffee", "Soda", "Milk", "Lemonade"],
-      answer: "Milk"
+      answer: "Milk",
+      done: false
   },
   {
+      id: 3,
       question: "What type of food is a cucumber?",
       options: ["Meat", "Fruit", "Vegetable", "Grain"],
-      answer: "Vegetable"
+      answer: "Vegetable",
+      done: false
   },
   {
+      id: 4,
       question: "Sushi is a cuisine that originated in which country?",
-      options: ["China", "Korea", "Thaliand", "Japan"],
-      answer: "Japan"
+      options: ["China", "Korea", "Thailand", "Japan"],
+      answer: "Japan",
+      done: false
   },
   {
+      id: 5,
       question: "Which of these fruits is known for having its seeds on the outside?",
       options: ["Raspberry", "Strawberry", "Blueberry", "Blackberry"],
-      answer: "Strawberry"
+      answer: "Strawberry",
+      done: false
   },
   {
-      question: "What sweet treat is made form cocoa beans?",
+      id: 6,
+      question: "What sweet treat is made from cocoa beans?",
       options: ["Cheese", "Popcorn", "Chocolate", "Bread"],
-      answer: "Chocolate"
+      answer: "Chocolate",
+      done: false
   },
   {
+      id: 7,
       question: "Which of these is a dairy product?",
       options: ["Apple", "Chicken", "Bread", "Cheese"],
-      answer: "Cheese"
+      answer: "Cheese",
+      done: false
   },
   {
+      id: 8,
       question: "What do bees make that is sweet and sticky?",
       options: ["Butter", "Jam", "Honey", "Milk"],
-      answer: "Honey"
+      answer: "Honey",
+      done: false
   },
   {
+      id: 9,
       question: "Which food is often eaten at movie theaters?",
       options: ["Popcorn", "Toast", "Rice", "Salad"],
-      answer: "Popcorn"
+      answer: "Popcorn",
+      done: false
   },
   {
-      question: "What fruit is known  for being green on the outside and red on the inside with vlack seeds?",
+      id: 10,
+      question: "What fruit is known for being green on the outside and red on the inside with black seeds?",
       options: ["Banana", "Orange", "Watermelon", "Apple"],
-      answer: "Watermelon"
+      answer: "Watermelon",
+      done: false
   }
 ];
+
 
 const games = [
   {
