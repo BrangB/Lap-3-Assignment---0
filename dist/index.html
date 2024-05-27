@@ -1,26 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="css/output.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="mainContainer w-screen h-screen flex items-center justify-center bg-waikawa-gray-50">
-        <div class="qTitle duration-300 flex gap-8 text-xl absolute">
-            <h1 class="bg-waikawa-gray-700 game hover:bg-waikawa-gray-600 hover:scale-125 hover:rotate-6 duration-150 p-4 px-6 text-white uppercase font-semibold rounded-md cursor-pointer">Game</h1>
-            <h1 class="bg-waikawa-gray-700 city hover:bg-waikawa-gray-600 hover:scale-125 hover:rotate-6 duration-150 p-4 px-6 text-white uppercase font-semibold rounded-md cursor-pointer">City</h1>
+    <link rel="stylesheet" href="css/output.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/2287ebfac7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div
+      class="mainContainer w-screen h-screen flex items-center justify-center bg-waikawa-gray-50"
+    >
+      <div class="qTitle duration-300 flex gap-8 text-xl absolute">
+        <h1
+          class="bg-waikawa-gray-700 game hover:bg-waikawa-gray-600 hover:scale-125 hover:rotate-6 duration-150 p-4 px-6 text-white uppercase font-semibold rounded-md cursor-pointer"
+        >
+          Game
+        </h1>
+        <h1
+          class="bg-waikawa-gray-700 city hover:bg-waikawa-gray-600 hover:scale-125 hover:rotate-6 duration-150 p-4 px-6 text-white uppercase font-semibold rounded-md cursor-pointer"
+        >
+          City
+        </h1>
+      </div>
+      <div
+        class="quizCard rounded-2xl rotateCard flex flex-col items-center justify-evenly gap-8 scale-0 duration-500 w-[600px] h-[430px] bg-waikawa-gray-300 text-white p-8"
+      >
+        <div
+          class="question border-l-4 border-waikawa-gray-600 font-semibold text-lg p-6 bg-waikawa-gray-200 text-waikawa-gray-900 rounded-lg text-center min-h-[60px]"
+        ></div>
+        <div
+          class="quizOption flex gap-4 w-[500px] items-center justify-center flex-wrap"
+        ></div>
+        <div class="nextAndPrev flex gap-6 w-full items-center justify-center">
+          <button
+            class="prev p-3 px-6 rounded-sm bg-waikawa-gray-700 hover:bg-waikawa-gray-600 duration-200"
+          >
+            Prev
+          </button>
+          <button
+            class="next p-3 px-6 rounded-sm bg-waikawa-gray-700 hover:bg-waikawa-gray-600 duration-200"
+          >
+            Next
+          </button>
         </div>
-        <div class="quizCard rotateCard flex flex-col items-center justify-center gap-8 scale-0 duration-500 w-[600px] h-[400px] bg-waikawa-gray-500 text-white p-6">
-            <div class="question font-semibold text-lg"></div>
-            <div class="quizOption flex gap-4"></div>
-            <button class="next">Next</button>
-            <button class="prev">Prev</button>
+      </div>
+        <div class="correct p-4 px-6 bg-[#ffffff] shadow-lg rounded-lg flex items-center justify-center font-medium text-black gap-4 absolute -top-20 scale-50 duration-200">
+          <i class="fa-solid fa-circle-check text-green-500"></i>
+          Correct !
+        </div>
+        <div class="incorrect p-4 px-6 bg-[#ffffff] shadow-lg rounded-lg flex items-center justify-center font-medium text-black gap-4 absolute -top-20 scale-50 duration-200">
+          <i class="fa-solid fa-circle-xmark text-red-500"></i>
+          Incorrect !
         </div>
     </div>
 
     <script type="module" src="js/index.js"></script>
-</body>
+  </body>
 </html>
