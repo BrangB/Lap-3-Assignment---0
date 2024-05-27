@@ -1,53 +1,53 @@
-const cities = [
+const foods = [
   {
-      question: "What is the capital of France?",
-      options: ["Paris", "London", "Berlin", "Rome"],
-      answer: "Paris"
+      question: "What vegetable do rabbits love to eat?",
+      options: ["Carrot", "Tomato", "Potato", "Broccoli"],
+      answer: "Carrot"
   },
   {
-      question: "What is the capital of Italy?",
-      options: ["Paris", "London", "Berlin", "Rome"],
-      answer: "Rome"
+      question: "Which drink is known for helping kids grow strong bones?",
+      options: ["Coffee", "Soda", "Milk", "Lemonade"],
+      answer: "Milk"
   },
   {
-      question: "What is the capital of Germany?",
-      options: ["Paris", "London", "Berlin", "Rome"],
-      answer: "Berlin"
+      question: "What type of food is a cucumber?",
+      options: ["Meat", "Fruit", "Vegetable", "Grain"],
+      answer: "Vegetable"
   },
   {
-      question: "What is the capital of Spain?",
-      options: ["Madrid", "Lisbon", "Paris", "Rome"],
-      answer: "Madrid"
+      question: "Sushi is a cuisine that originated in which country?",
+      options: ["China", "Korea", "Thaliand", "Japan"],
+      answer: "Japan"
   },
   {
-      question: "What is the capital of Portugal?",
-      options: ["Madrid", "Lisbon", "Paris", "Rome"],
-      answer: "Lisbon"
+      question: "Which of these fruits is known for having its seeds on the outside?",
+      options: ["Raspberry", "Strawberry", "Blueberry", "Blackberry"],
+      answer: "Strawberry"
   },
   {
-      question: "What is the capital of Japan?",
-      options: ["Tokyo", "Beijing", "Seoul", "Bangkok"],
-      answer: "Tokyo"
+      question: "What sweet treat is made form cocoa beans?",
+      options: ["Cheese", "Popcorn", "Chocolate", "Bread"],
+      answer: "Chocolate"
   },
   {
-      question: "What is the capital of Canada?",
-      options: ["Toronto", "Vancouver", "Ottawa", "Montreal"],
-      answer: "Ottawa"
+      question: "Which of these is a dairy product?",
+      options: ["Apple", "Chicken", "Bread", "Cheese"],
+      answer: "Cheese"
   },
   {
-      question: "What is the capital of Australia?",
-      options: ["Sydney", "Melbourne", "Brisbane", "Canberra"],
-      answer: "Canberra"
+      question: "What do bees make that is sweet and sticky?",
+      options: ["Butter", "Jam", "Honey", "Milk"],
+      answer: "Honey"
   },
   {
-      question: "What is the capital of Brazil?",
-      options: ["Rio de Janeiro", "São Paulo", "Brasília", "Salvador"],
-      answer: "Brasília"
+      question: "Which food is often eaten at movie theaters?",
+      options: ["Popcorn", "Toast", "Rice", "Salad"],
+      answer: "Popcorn"
   },
   {
-      question: "What is the capital of India?",
-      options: ["Mumbai", "New Delhi", "Bangalore", "Chennai"],
-      answer: "New Delhi"
+      question: "What fruit is known  for being green on the outside and red on the inside with vlack seeds?",
+      options: ["Banana", "Orange", "Watermelon", "Apple"],
+      answer: "Watermelon"
   }
 ];
 
