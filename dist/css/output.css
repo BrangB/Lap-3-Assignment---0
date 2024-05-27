@@ -558,6 +558,10 @@ video {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
 .top-5 {
   top: 1.25rem;
 }
@@ -576,6 +580,22 @@ video {
 
 .-top-20 {
   top: -5rem;
+}
+
+.top-1 {
+  top: 0.25rem;
+}
+
+.-top-2 {
+  top: -0.5rem;
+}
+
+.-top-3 {
+  top: -0.75rem;
+}
+
+.-top-4 {
+  top: -1rem;
 }
 
 .flex {
@@ -600,6 +620,10 @@ video {
 
 .min-h-\[60px\] {
   min-height: 60px;
+}
+
+.min-h-\[50px\] {
+  min-height: 50px;
 }
 
 .w-\[35\%\] {
@@ -628,6 +652,14 @@ video {
 
 .w-\[300px\] {
   width: 300px;
+}
+
+.w-\[40\%\] {
+  width: 40%;
+}
+
+.w-\[650px\] {
+  width: 650px;
 }
 
 .scale-0 {
@@ -706,6 +738,10 @@ video {
 
 .rounded-sm {
   border-radius: 0.125rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .border {
@@ -787,6 +823,10 @@ video {
   padding: 2rem;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -795,6 +835,16 @@ video {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .text-center {
@@ -809,6 +859,11 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-semibold {

@@ -9,6 +9,7 @@ const question = document.querySelector(".question");
 const quizOption = document.querySelector(".quizOption");
 const correctAlert = document.querySelector(".correct");
 const incorrectAlert = document.querySelector(".incorrect");
+const quizNumber = document.querySelector('.quizNumber');
 
 const cities = [
   {
@@ -206,6 +207,8 @@ class Quiz {
     question.textContent = quizData.question
     this.currentQuiz == 0 ? prevButton.classList.add("cursor-not-allowed") : prevButton.classList.remove("cursor-not-allowed")
 
+    this.quizTitle === "games" ? quizNumber.textContent = `${this.currentQuiz + 1}/${games.length}` : quizNumber.textContent = `${this.currentQuiz + 1}/${cities.length}`
+
     //disabled button
     if(this.quizTitle === "games"){
       this.currentQuiz == games.length - 1 ? nextButton.classList.add("cursor-not-allowed") : nextButton.classList.remove("cursor-not-allowed")
@@ -216,7 +219,7 @@ class Quiz {
     quizOption.innerHTML = `
         ${
             quizData.options.map(option => {
-                return `<button class="quiz-option w-[35%] h-[60px] text-center bg-waikawa-gray-200 duration-300 hover:border-transparent hover:bg-waikawa-gray-600 hover:text-waikawa-gray-50 border border-waikawa-gray-500 rounded-sm p-3 px-5 font-semibold text-waikawa-gray-900">${option}</button>`
+                return `<button class="quiz-option w-[40%] min-h-[60px] text-center bg-waikawa-gray-200 duration-300 hover:border-transparent hover:bg-waikawa-gray-600 hover:text-waikawa-gray-50 border border-waikawa-gray-500 rounded-sm p-3 px-5 font-medium text-waikawa-gray-900">${option}</button>`
             }).join("")
         }
     `
