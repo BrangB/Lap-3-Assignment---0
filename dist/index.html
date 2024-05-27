@@ -16,15 +16,14 @@
         <i class="fa-solid fa-arrow-left text-2xl text-waikawa-gray-900"></i>
     </div>
     <div class="mainContainer w-screen h-screen flex items-center justify-center bg-waikawa-gray-50">
-      <div class="qTitle duration-300 flex gap-8 text-xl absolute">
-        <h1 class="bg-waikawa-gray-700 game hover:bg-waikawa-gray-600 hover:scale-125 hover:rotate-6 duration-150 p-4 px-6 text-white uppercase font-semibold rounded-md cursor-pointer">
-          Game
-        </h1>
-        <h1 class="bg-waikawa-gray-700 food hover:bg-waikawa-gray-600 hover:scale-125 hover:rotate-6 duration-150 p-4 px-6 text-white uppercase font-semibold rounded-md cursor-pointer">
-          Food
-        </h1>
-      </div>
-      <div class="quizCard relative hidden rounded-2xl rotateCard flex-col items-center justify-evenly gap-8 scale-0 duration-500 w-[650px] h-[430px] bg-waikawa-gray-300 text-white p-8">
+        <div class="qTitle duration-300 flex flex-col items-center justify-center gap-12 text-xl absolute">
+            <img src="./images/undraw_welcome_cats_thqn.svg" alt="welcome" class="w-[300px] hover:scale-110 duration-200">
+            <div class="buttons flex gap-8">
+                <h1 class="bg-waikawa-gray-700 game hover:bg-waikawa-gray-600 hover:scale-125 hover:rotate-6 duration-150 p-4 px-6 text-white uppercase font-semibold rounded-md cursor-pointer">Game</h1>
+                <h1 class="bg-waikawa-gray-700 food hover:bg-waikawa-gray-600 hover:scale-125 hover:rotate-6 duration-150 p-4 px-6 text-white uppercase font-semibold rounded-md cursor-pointer">Food</h1>
+            </div>
+        </div>
+        <div class="quizCard relative hidden rounded-2xl rotateCard flex-col items-center justify-evenly gap-8 scale-0 duration-500 w-[650px] h-[430px] bg-waikawa-gray-300 text-white p-8">
         <p class="quizNumber p-2 px-6 bg-waikawa-gray-700 absolute -top-4 rounded-lg text-sm font-medium"></p>
         <div class="question border-l-4 border-waikawa-gray-600 font-medium text-lg p-6 bg-waikawa-gray-200 text-waikawa-gray-900 rounded-lg text-center min-h-[60px]"></div>
         <div class="quizOption flex gap-4 w-[500px] items-center justify-center flex-wrap"></div>
@@ -42,8 +41,8 @@
         <div class="doneImage hidden absolute bottom-16 left-11 w-32">
             <img src="./images/done logo.png" class="w-full h-full" alt="done logo">
         </div>
-      </div>
-      <div class="score hidden duration-200 relative w-[350px] h-[400px] bg-white shadow-lg rounded-lg flex-col p-4 gap-6 items-center justify-evenly">
+        </div>
+        <div class="score hidden duration-200 relative w-[350px] h-[400px] bg-white shadow-lg rounded-lg flex-col p-4 gap-6 items-center justify-evenly">
         <h1 class="font-semibold text-xl uppercase">Score</h1>
         <div class="desc w-full flex flex-col gap-6 p-6">
             <div class="flex items-center justify-between">
@@ -60,9 +59,9 @@
             </div>
         </div>
         <div class="w-full text-center"><span class="percentage text-green-500 font-medium text-xl">0%</span> Success</div>
-        <button class="p-2 px-5 rounded-sm bg-waikawa-gray-700 text-white cursor-pointer hover:bg-waikawa-gray-600 duration-200">Back</button>
+        <!-- <button class="p-2 px-5 rounded-sm bg-waikawa-gray-700 text-white cursor-pointer hover:bg-waikawa-gray-600 duration-200">Back</button> -->
         <img src="./images/result.png" class="w-[160px] absolute -bottom-16 -left-20" alt="">
-      </div>
+        </div>
         <div class="correct p-4 px-6 bg-[#ffffff] shadow-lg rounded-lg flex items-center justify-center font-medium text-black gap-4 absolute -top-20 scale-50 duration-200">
           <i class="fa-solid fa-circle-check text-green-500 text-lg"></i>
           Correct !
@@ -75,6 +74,7 @@
             <i class="fa-solid fa-triangle-exclamation text-lg text-yellow-500"></i>
             <p class="warningMessage"></p>
         </div>
+        <div class="footer fixed bottom-0 left-0 font-medium text-waikawa-gray-950 p-4 text-left">Developed by Group - 3 (Syntax)</div>
     </div>
     <script type="module" src="js/main.js"></script>
   </body>

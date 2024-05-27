@@ -1,4 +1,4 @@
-const foods = [
+export const foods = [
   {
       id: 1,
       question: "What vegetable do rabbits love to eat?",
@@ -71,56 +71,80 @@ const foods = [
   }
 ];
 
-
-const games = [
+export const games = [
   {
+    id: 1,
     question: "What is the highest-grossing video game of all time?",
     options: ["Minecraft", "GTA V", "Tetris", "Fortnite"],
-    answer: "Minecraft"
+    answer: "Minecraft",
+    done: false,
   },
   {
+    id: 2,
     question: "In which year was the first Call of Duty game released?",
     options: ["2000", "2003", "2005", "2007"],
-    answer: "2003"
+    answer: "2003",
+    done: false,
   },
   {
+    id: 3,
     question: "What is the name of the main protagonist in The Legend of Zelda series?",
     options: ["Zelda", "Link", "Ganon", "Epona"],
-    answer: "Link"
+    answer: "Link",
+    done: false,
   },
   {
+    id: 4,
     question: "Which game features a plumber trying to save a princess from a turtle-like villain?",
-    options: ["Sonic the Hedgehog", "Mega Man", "Super Mario Bros", "Castlevania"],
-    answer: "Super Mario Bros"
+    options: [
+      "Sonic the Hedgehog",
+      "Mega Man",
+      "Super Mario Bros",
+      "Castlevania",
+    ],
+    answer: "Super Mario Bros",
+    done: false,
   },
   {
+    id: 5,
     question: "Which game is known for the phrase 'The cake is a lie'?",
     options: ["Portal", "Half-Life", "Bioshock", "Fallout"],
-    answer: "Portal"
+    answer: "Portal",
+    done: false,
   },
   {
+    id: 6,
     question: "In which game do players compete in a battle royale on an island named Erangel?",
     options: ["Apex Legends", "Fortnite", "PUBG", "Call of Duty: Warzone"],
-    answer: "PUBG"
+    answer: "PUBG",
+    done: false,
   },
   {
+    id: 7,
     question: "Which game involves characters named Ryu, Ken, and Chun-Li?",
     options: ["Tekken", "Street Fighter", "Mortal Kombat", "King of Fighters"],
-    answer: "Street Fighter"
+    answer: "Street Fighter",
+    done: false,
   },
   {
+    id: 8,
     question: "In which game series do you fight against a villain named Dr. Robotnik?",
     options: ["Mega Man", "Sonic the Hedgehog", "Metroid", "Castlevania"],
-    answer: "Sonic the Hedgehog"
+    answer: "Sonic the Hedgehog",
+    done: false,
   },
   {
+    id: 9,
     question: "Which game series features a post-apocalyptic world set in the 22nd century?",
     options: ["The Elder Scrolls", "Fallout", "Mass Effect", "Borderlands"],
-    answer: "Fallout"
+    answer: "Fallout",
+    done: false,
   },
   {
+    id: 10,
     question: "What is the main currency used in the game The Legend of Zelda: Breath of the Wild?",
     options: ["Gil", "Rupees", "Gold", "Coins"],
-    answer: "Rupees"
-  }
+    answer: "Rupees",
+    done: false,
+  },
 ];
