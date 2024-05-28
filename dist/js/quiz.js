@@ -53,7 +53,6 @@ class Quiz {
         incorrectQ.textContent = this.quizArray.length - this.totalScore
         const percentageScore = (this.totalScore / this.quizArray.length) * 100;
         percentage.textContent = `${percentageScore.toFixed(1)}%`;
-        console.log(percentageScore)
         scoreCard.style.display = "flex"
         quizCard.style.display = "none"
       }
@@ -97,6 +96,7 @@ class Quiz {
       if(this.currentQuiz < this.quizArray.length - 1){
           this.currentQuiz += 1;
           this.showQuiz();
+
           quizCard.classList.toggle("rotateCard")
           quizCard.classList.toggle("shakeCard")
       }
@@ -106,6 +106,7 @@ class Quiz {
       if (this.currentQuiz > 0) {
         this.currentQuiz -= 1;
         this.showQuiz();
+        
         quizCard.classList.toggle("rotateCard")
         quizCard.classList.toggle("shakeCard")
       }

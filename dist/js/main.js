@@ -12,7 +12,6 @@ const backToHome = document.querySelector(".backToHome");
 let currentQuiz = 0;
 let totalScore = 0;
 let quizTitle = "games";
-
 let quiz;
 
 const generateNewQuiz = (quizTitle) => {

@@ -6,16 +6,20 @@
     <title>Quiz | Assignment - 0</title>
     <link rel="stylesheet" href="css/output.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script
-      src="https://kit.fontawesome.com/2287ebfac7.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/2287ebfac7.js" crossorigin="anonymous"></script>
   </head>
-  <body>
-    <div class="backToHome absolute top-10 left-10 cursor-pointer">
+  <body class="bg-waikawa-gray-50 overflow-hidden">
+
+    <!-- Back Arrow (refresh) -->
+    <div class="backToHome absolute z-40 top-10 left-10 cursor-pointer">
         <i class="fa-solid fa-arrow-left text-2xl text-waikawa-gray-900"></i>
     </div>
-    <div class="mainContainer w-screen h-screen flex items-center justify-center bg-waikawa-gray-50">
+
+    <!-- bg image -->
+    <div class="bg absolute bg-[url('../images/bg.png')] bg-cover bg-no-repeat w-screen h-screen"></div>
+
+    <div class="mainContainer w-screen h-screen flex items-center justify-center ">
+        <!-- Question Topic eg: Games, Foods -->
         <div class="qTitle duration-300 flex flex-col items-center justify-center gap-12 text-xl absolute">
             <img src="./images/undraw_welcome_cats_thqn.svg" alt="welcome" class="w-[300px] hover:scale-110 duration-200">
             <div class="buttons flex gap-8">
@@ -23,48 +27,51 @@
                 <h1 class="bg-waikawa-gray-700 food hover:bg-waikawa-gray-600 hover:scale-125 hover:rotate-6 duration-150 p-4 px-6 text-white uppercase font-semibold rounded-md cursor-pointer">Food</h1>
             </div>
         </div>
-        <div class="quizCard relative hidden rounded-2xl rotateCard flex-col items-center justify-evenly gap-8 scale-0 duration-500 w-[650px] h-[430px] bg-waikawa-gray-300 text-white p-8">
-        <p class="quizNumber p-2 px-6 bg-waikawa-gray-700 absolute -top-4 rounded-lg text-sm font-medium"></p>
-        <div class="question border-l-4 border-waikawa-gray-600 font-medium text-lg p-6 bg-waikawa-gray-200 text-waikawa-gray-900 rounded-lg text-center min-h-[60px]"></div>
-        <div class="quizOption flex gap-4 w-[500px] items-center justify-center flex-wrap"></div>
-        <div class="nextAndPrev flex gap-6 w-full items-center justify-center">
-          <button class="prev p-3 px-6 rounded-sm bg-waikawa-gray-700 hover:bg-waikawa-gray-600 duration-200">
-            Prev
-          </button>
-          <button class="next p-3 px-6 rounded-sm bg-waikawa-gray-700 hover:bg-waikawa-gray-600 duration-200">
-            Next
-          </button>
-          <button class="submit p-3 px-6 rounded-sm bg-waikawa-gray-700 hover:bg-waikawa-gray-600 duration-200">
-            Submit
-          </button>
+        <!-- Quiz Card to display quiz and options -->
+        <div class="quizCard relative hidden rounded-2xl rotateCard flex-col items-center justify-evenly gap-8 scale-0 duration-500 w-full md:w-[650px] md:h-[430px] bg-waikawa-gray-300 text-white p-8">
+          <p class="quizNumber p-2 px-6 bg-waikawa-gray-700 absolute -top-4 rounded-lg text-sm font-medium"></p>
+          <div class="question border-l-4 border-waikawa-gray-600 font-medium text-lg p-4 md:p-6 bg-waikawa-gray-200 text-waikawa-gray-900 rounded-lg text-center min-h-[60px]"></div>
+          <div class="quizOption flex gap-4 w-full md:w-[500px] items-center justify-center flex-wrap"></div>
+          <div class="nextAndPrev flex gap-6 w-full items-center justify-center">
+            <button class="prev p-3 px-6 rounded-sm bg-waikawa-gray-700 hover:bg-waikawa-gray-600 duration-200">
+              Prev
+            </button>
+            <button class="next p-3 px-6 rounded-sm bg-waikawa-gray-700 hover:bg-waikawa-gray-600 duration-200">
+              Next
+            </button>
+            <button class="submit p-3 px-6 rounded-sm bg-waikawa-gray-700 hover:bg-waikawa-gray-600 duration-200">
+              Submit
+            </button>
+          </div>
+          <div class="doneImage hidden absolute bottom-16 left-11 w-32">
+              <img src="./images/done logo.png" class="w-full h-full" alt="done logo">
+          </div>
         </div>
-        <div class="doneImage hidden absolute bottom-16 left-11 w-32">
-            <img src="./images/done logo.png" class="w-full h-full" alt="done logo">
-        </div>
-        </div>
-        <div class="score hidden duration-200 relative w-[350px] h-[400px] bg-white shadow-lg rounded-lg flex-col p-4 gap-6 items-center justify-evenly">
-        <h1 class="font-semibold text-xl uppercase">Score</h1>
-        <div class="desc w-full flex flex-col gap-6 p-6">
+        <!-- Display score -->
+        <div class="score hidden duration-200 relative w-[70%] md:w-[350px] md:h-[400px] bg-white shadow-lg rounded-lg flex-col p-4 gap-6 items-center justify-evenly">
+          <h1 class="font-semibold text-xl uppercase text-waikawa-gray-950">Score</h1>
+          <div class="desc w-full flex flex-col gap-6 p-6">
             <div class="flex items-center justify-between">
-                <p>Number of questions</p>
-                <span class="amount">10</span>
+              <p class="font-medium">Number of Questions</p>
+              <span class="amount font-medium">10</span>
             </div>
             <div class="flex items-center justify-between">
-                <p class="flex items-center justify-center">Correct Quantity<i class="fa-solid fa-circle-check text-green-500 text-lg ms-3"></i></p>
-                <span class="correctQ">10</span>
+              <p class="flex items-center justify-center font-medium">Correct Answers<i class="fa-solid fa-circle-check text-green-500 text-lg ms-3"></i></p>
+              <span class="correctQ font-medium">10</span>
             </div>
             <div class="flex items-center justify-between">
-                <p class="flex items-center justify-center">Wrong Quantity<i class="fa-solid fa-circle-xmark text-red-500 text-lg ms-3"></i></p>
-                <span class="incorrectQ">10</span>
-            </div>
+              <p class="flex items-center justify-center font-medium">Incorrect Answers<i class="fa-solid fa-circle-xmark text-red-500 text-lg ms-3"></i></p>
+              <span class="incorrectQ font-medium">10</span>
+            </div>        
+          </div>
+          <div class="w-full text-center"><span class="percentage text-green-500 font-medium text-xl">0%</span> Success</div>
+          <img src="./images/result.png" class="w-[160px] absolute -bottom-16 -left-20" alt="">
         </div>
-        <div class="w-full text-center"><span class="percentage text-green-500 font-medium text-xl">0%</span> Success</div>
-        <!-- <button class="p-2 px-5 rounded-sm bg-waikawa-gray-700 text-white cursor-pointer hover:bg-waikawa-gray-600 duration-200">Back</button> -->
-        <img src="./images/result.png" class="w-[160px] absolute -bottom-16 -left-20" alt="">
-        </div>
+
+        <!-- Alert Message -->
         <div class="correct p-4 px-6 bg-[#ffffff] shadow-lg rounded-lg flex items-center justify-center font-medium text-black gap-4 absolute -top-20 scale-50 duration-200">
           <i class="fa-solid fa-circle-check text-green-500 text-lg"></i>
-          Correct !
+          Correct
         </div>
         <div class="incorrect p-4 px-6 bg-[#ffffff] shadow-lg rounded-lg flex items-center justify-center font-medium text-black gap-4 absolute -top-20 scale-50 duration-200">
           <i class="fa-solid fa-circle-xmark text-red-500 text-lg"></i>
@@ -74,6 +81,7 @@
             <i class="fa-solid fa-triangle-exclamation text-lg text-yellow-500"></i>
             <p class="warningMessage"></p>
         </div>
+
         <div class="footer fixed bottom-0 left-0 font-medium text-waikawa-gray-950 p-4 text-left">Developed by Group - 3 (Syntax)</div>
     </div>
     <script type="module" src="js/main.js"></script>

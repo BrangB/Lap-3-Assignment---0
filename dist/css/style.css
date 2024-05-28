@@ -5,6 +5,10 @@ body{
   font-weight: 300;
 }
 
+.bg{
+  filter: blur(20px);
+}
+
 .shakeCard {
     animation: shake 0.5s ease-in-out;
 }
