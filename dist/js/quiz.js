@@ -90,8 +90,7 @@ class Quiz {
         }
       });
     }
-  
-  
+
     next() {
       if(this.currentQuiz < this.quizArray.length - 1){
           this.currentQuiz += 1;
